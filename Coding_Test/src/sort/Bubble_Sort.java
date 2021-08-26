@@ -18,7 +18,7 @@ public class Bubble_Sort {	//직관적이며 코드가 짧고 단순하나, 비�
 	}
 	
 	public static void main(String[] args) {
-		int[] a = {4,2,5,1,3};	//배열
+		int[] a = {4,5,1,2,3,7,6};	//배열
 		int len = a.length;
 		
 		bubble(a, len);
