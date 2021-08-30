@@ -1,4 +1,4 @@
-package coding;
+package backjoon;
 import java.util.Arrays;
 
 class K_nums {
