@@ -16,8 +16,8 @@ public class Bracket_9012 {
 	}
 	static boolean solveVPS(String line) {
 		Stack<String> stack = new Stack<String>();
-		for (int i = 0; i < stack.size(); i++) {
-			String a = stack.get(i);
+		for (int i = 0; i < line.length(); i++) {
+			String a = String.valueOf(line.charAt(i));
 
 			//만약 여는기호일 경우에는 조건없이 push한다.
 			if (a.equals("(")) {
@@ -33,7 +33,7 @@ public class Bracket_9012 {
 			}
 		}
 
-		//위의 조건을 다 완수하고 stack이 비었을경우에는 ([])모든 기호가 전부 균형잡혔다는 뜻이므로 균형잡힌 문장이다.
+		//위의 조건을 다 완수하고 stack이 비었을경우에는 ()모든 기호가 전부 균형잡혔다는 뜻이므로 균형잡힌 문장이다.
 		if (stack.empty()) {
 			return true;
 		}else {
