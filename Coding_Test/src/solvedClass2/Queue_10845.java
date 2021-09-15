@@ -18,13 +18,14 @@ public class Queue_10845 {
 		int N = Integer.parseInt(br.readLine());
 		
 		
+		int num = 0;
 		for (int i = 0; i < N; i++) {
 			String line = br.readLine();
 			st = new StringTokenizer(line);
 			if (st.countTokens() > 1) {
 				st.nextToken();
-				qu.offer(Integer.parseInt(st.nextToken()));
-				System.out.println(qu.toString());
+				num = Integer.parseInt(st.nextToken());
+				qu.offer(num);
 			}else if(line.equals("pop")) {
 				if (qu.isEmpty()) {
 					bw.write("-1" +"\n");
@@ -35,24 +36,20 @@ public class Queue_10845 {
 			}else if(line.equals("empty")) {
 				bw.write(qu.isEmpty() ? "1" : "0");
 				bw.write("\n");
-			}else if(line.equals("back")){
+			}else if(line.equals("front")){
 				if (qu.isEmpty()) {
 					bw.write("-1"+"\n");
 				}else {
-					System.out.println(qu.peek()+"백");
 					bw.write(qu.peek()+"\n");
 				}
-			}else if(line.equals("front")) {
+			}else if(line.equals("back")) {
 				if (qu.isEmpty()) {
 					bw.write("-1"+"\n");
 				}else {
-					int num = qu.poll();
-					System.out.println(num+"프론트");
 					bw.write(num+"\n");
 				}
 			}
 			if (line.equals("size")) {
-				System.out.println(qu.size()+"사이즈");
 				bw.write(qu.size()+"\n");
 			}
 		}
