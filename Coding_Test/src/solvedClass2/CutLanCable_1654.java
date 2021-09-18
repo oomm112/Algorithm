@@ -27,15 +27,12 @@ public class CutLanCable_1654 {
 			mid = (max+min) / 2;
 			for (int i = 0; i < arr.length; i++) {
 				count += (arr[i]/mid);
-				System.out.println(arr[i]);
 			}
 			if (count < N) {
 				max = mid;
 			}else {
 				min = mid +1;
 			}
-			System.out.println(max + " " + min);
-			System.out.println(count);
 		}
 		System.out.println(min -1 );
 	}
