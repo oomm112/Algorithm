@@ -16,12 +16,9 @@ public class BinomialCoefficient_11050 {
 	}
 
 	static int solveBinomal(int n, int k) {
-		if (n == 0|| n == k) {
-			System.out.println("n이 0이거나 n과k가같음");
+		if (k == 0|| n == k) {
 			return 1;
-		}else {
-			System.out.println(n +" "+ k);
-			return solveBinomal(n-1, k-1) + solveBinomal(n-1, k);
 		}
+		return solveBinomal(n-1, k-1) + solveBinomal(n-1, k);
 	}
 }
