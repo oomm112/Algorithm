@@ -5,30 +5,30 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class FourSquares_17626 {
-	static int num = 0;
-	static int count = 1;
+	static int[] dp;
 	public static void main(String[] args) throws NumberFormatException, IOException {		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
+		
 		int n = Integer.parseInt(br.readLine());
-		System.out.println(solve(n));
+		dp = new int[n+1];
+		
+		dp[0] = 0;
+		dp[1] = 1;
+		
+		//n+1까지의 배열에 값을 등록해준다.
+		solve(n);
+		
+		System.out.println(dp[n]);
 	}
 
-	static int solve(int n) {	
-			while(count++ < 4) {
-				int a = (int) (Math.sqrt(n));
-				n -= Math.pow(a, 2);
-				System.out.println(a+ " " + n);
-				if (n == 0) {
-					break;
-				}
+	//
+	static void solve(int n) {
+		for (int i = 2; i <= n; i++) {
+			int min = Integer.MAX_VALUE;
+			for (int j = 1; j * j <= i; j++) {
+				min = Math.min(min, dp[i - j * j]);
 			}
-		}
-
-		if (n == 0) {
-			return count;
-		}else {
-			return sol;
+			dp[i] = min+1;
 		}
 	}
 }
