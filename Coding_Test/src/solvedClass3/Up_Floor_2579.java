@@ -19,6 +19,7 @@ public class Up_Floor_2579 {
 		}	
 	}
 	
+	//시간체크 실패
 	static int solveScore(int[] floor, int T) {
 		if (T == count) {
 			return score;
