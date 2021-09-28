@@ -5,29 +5,31 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Up_Floor_2579 {
-	static int step = 0;
-	static int count = 0;
-	static int score = 0;
+	static int[] dp;
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int T = Integer.parseInt(br.readLine());
-		int[] floor = new int[T];
+		dp = new int[T+1];
+		int[] floor = new int[T+1];
 		
-		for (int i = 0; i < floor.length; i++) {
+		for (int i = 1; i <= T; i++) {
 			floor[i] = Integer.parseInt(br.readLine());
 		}	
+		
+		dp[1] = floor[1];
+		solveScore(floor, T);
+		
+		System.out.println(dp[T]);
 	}
 	
-	//시간체크 실패
-	static int solveScore(int[] floor, int T) {
-		if (T == count) {
-			return score;
-		}else if(step == 2) {
-			count += 2;
-			step = 0;
+	//Bottom-up 방식 사용
+	static void solveScore(int[] floor,int T) {
+		if (T >= 2) {
+			dp[2] = floor[1] + floor[2];
 		}
-		score += floor[count];
-		return Math.max(solveScore(floor, T), solveScore(floor, T));
+		for (int i = 3; i <= T; i++) {
+			dp[i] = Math.max(dp[i-2], dp[i-3] + floor[i-1]) + floor[i];
+		}
 	}
 }
