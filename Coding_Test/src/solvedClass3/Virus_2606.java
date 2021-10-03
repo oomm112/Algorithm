@@ -18,6 +18,7 @@ public class Virus_2606 {
 		int T = Integer.parseInt(br.readLine());
 		int N = Integer.parseInt(br.readLine());
 		Queue<Integer> qu = new LinkedList<Integer>();
+		int count = 0;
 		
 		//컴퓨터 쌍의 수 만큼 반복
 		while(N-- > 0) {
@@ -31,6 +32,7 @@ public class Virus_2606 {
 				if (a == qu.peek()) {
 					qu.poll();
 					qu.add(b);
+					count++;
 				}
 			}
 		}
