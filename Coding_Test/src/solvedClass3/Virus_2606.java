@@ -7,7 +7,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-//아직 못푼문제
 public class Virus_2606 {
 	static int[][] graph;
 	static int[] check;
@@ -17,8 +16,8 @@ public class Virus_2606 {
 		
 		int T = Integer.parseInt(br.readLine());
 		int N = Integer.parseInt(br.readLine());
-		Queue<Integer> qu = new LinkedList<Integer>();
-		int count = 0;
+		graph = new int[T+1][T+1];
+		check = new int[T+1];
 		
 		//컴퓨터 쌍의 수 만큼 반복
 		while(N-- > 0) {
@@ -26,16 +25,31 @@ public class Virus_2606 {
 			int a = Integer.parseInt(st.nextToken());
 			int b = Integer.parseInt(st.nextToken());
 			
-			if (a == b) {
-				qu.add(b);
-			}else {			
-				if (a == qu.peek()) {
-					qu.poll();
-					qu.add(b);
+			graph[a][b] = 1;
+			graph[b][a] = 1;
+			
+		}
+		
+		System.out.println(bfs(1));
+	}
+	
+	//BFS방법 이용
+	static int bfs(int start) {
+		check[start] = 1;
+		int count = 0;
+		Queue<Integer> qu = new LinkedList<Integer>();
+		
+		qu.offer(start);
+		while(!qu.isEmpty()) {
+			int x = qu.poll();
+			for (int i = 1; i < graph.length; i++) {
+				if (graph[x][i] == 1 && check[i] != 1) {
+					qu.offer(i);
+					check[i] = 1;
 					count++;
 				}
 			}
 		}
-		
+		return count;
 	}
 }
