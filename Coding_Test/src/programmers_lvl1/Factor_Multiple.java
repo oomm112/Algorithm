@@ -11,15 +11,13 @@ public class Factor_Multiple {
 			m = tmp;
 		}
         
-        if (n%m == 0) {
-			if () {
-				
+        for (int i = n; i > 0; i--) {
+			if (n%i == 0 && m%i == 0) {
+				answer[0] = i;
+				answer[1] = (n/i)*(m/i)*i;
+				break;
 			}
 		}
-        
-        int max = n*m;	//두수의 최소공배수가 없을때
-        
-        
         return answer;
     }
 	public static void main(String[] args) {
