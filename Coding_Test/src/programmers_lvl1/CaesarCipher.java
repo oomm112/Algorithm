@@ -2,30 +2,33 @@ package programmers_lvl1;
 
 public class CaesarCipher {
 	public static String solution(String s, int n) {
-        String answer = "";
-        String[] alphabet 
-        
-        for (int i = 0; i < s.length(); i++) {
-        	if (s.charAt(i) == ' ') {
-        		answer = answer + " ";
+		String answer = "";
+
+		for (int i = 0; i < s.length(); i++) {
+			char word = (char)s.charAt(i);
+			if (word == ' ') {
+				answer += (char)word;
 				continue;
 			}
-        	
-        	char word = s.charAt(i);
-        	if (word == 'z') {
-				word = (char) ('a'+ (n-1));
-			}else if(word == 'Z') {
-				word = (char) ('A' + (n-1));
-			}else {
-				word = (char) (s.charAt(i)+n);
+
+			if (word >= 'a' && word <= 'z') {
+				if (word+n > 'z') {
+					answer += (char)(word-26+n);
+				}else {
+					answer += (char)(word+n);
+				}
+			}else if(word >= 'A' && word <= 'Z') {
+				if (word+n > 'Z') {
+					answer += (char)(word-26+n);
+				}else {
+					answer += (char)(word+n);
+				}
 			}
-			answer= answer + word;
 		}
-        
-        return answer;
-    }
+		return answer;
+	}
 	public static void main(String[] args) {
-		System.out.println(solution("z", 1));
+		System.out.println(solution("zZ a z zZ", 4));
 	}
 
 }

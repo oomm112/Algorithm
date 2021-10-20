@@ -3,7 +3,7 @@ package programmers_lvl1;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class SortString {
+public class SortStringDec {
 	public String[] solution(String[] strings, int n) {
         Arrays.sort(strings, new Comparator<String>() {
 
