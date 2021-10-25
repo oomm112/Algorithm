@@ -16,7 +16,6 @@ public class StringCompression {
 		int count = 1;
 		String pattern = "";
 		for (int j = 0; j < s.length() + i; j+=1) {
-			SS44
 		}
 		
 		return s;
