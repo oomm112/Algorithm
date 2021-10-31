@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.StringTokenizer;
 
 public class Question3 {
+	//못푼문제
 	public static String[] solution(String[] logs) {
 		//수험번호 , 문제번호 , 점수 형식
 		String[] answer = {};
