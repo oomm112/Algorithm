@@ -5,7 +5,7 @@ public class FindSosu {
         int answer = 0;
         String[] paper = numbers.split("");
         
-        while(paper.is) {
+        while(paper.isss) {
         	
         }
         
