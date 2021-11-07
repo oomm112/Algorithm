@@ -8,7 +8,8 @@ public class DoublePriorityQueue_7662 {
 
 	public static void main(String[] args) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		PriorityQueue<PriorityQueue<String>> pQuD = new PriorityQueue<>();ss
+		PriorityQueue<PriorityQueue<String>> pQuD = new PriorityQueue<>();
+		int a = 1;
 
 	}
 
