@@ -26,6 +26,7 @@ public class Nums_1065 {
 				//셋째 자리수가 나오면 한수이다.
 				if (b + abs == a) {
 					count++;
+					System.out.println(i);
 				}
 			}
 		}
