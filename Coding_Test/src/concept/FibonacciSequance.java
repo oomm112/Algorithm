@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 //피보나치 수열은 f(n) = f(n-1) + f(n-2)의 공식을 따른다.
-//피보나치 수열을 만들수 있는 방법에는 재귀호출/반복문/동적구현법이 존재한다.
+//피보나치 수열을 만들수 있는 방법에는 재귀호출/반복문/동적구현법이 존재한다. 
 public class FibonacciSequance {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
