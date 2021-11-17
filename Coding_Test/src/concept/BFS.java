@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-/* 테스트케이스
+/* 테스트 케이스
 10
 8
 1 2
