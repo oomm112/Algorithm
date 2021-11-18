@@ -3,7 +3,7 @@ package backjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-//s
+//2750번문제
 public class B_2750 {// 백준 2750번문제
 	public static void sort(int[] arr) { //거품정렬 (Bubble_Sort) 방식
 		for (int i = arr.length; i > 0; i--) {
