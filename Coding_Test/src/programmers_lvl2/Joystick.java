@@ -7,15 +7,14 @@ public class Joystick {
 
 		for (int i = 0; i < name.length(); i++) {
 			answer += Math.min(name.charAt(i)-'A', 'Z' - name.charAt(i)+1);
-
 			int next = i+1;
 
 			//아래 좌우 부분이 이해안됨 ***
 			while(next < name.length() && name.charAt(next) == 'A') {
 				next++;
 			}
-			min = Math.min(min, i*2+name.length()-next);
-			System.out.println(min);
+			min = Math.min(min, (i*2)+name.length()-next);
+			min = Math.min(min, (name.length() - next) * 2 + i);
 		}
 
 		answer+= min;
